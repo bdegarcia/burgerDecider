@@ -1,15 +1,4 @@
-const connection = require("config/connection")
+const connection = require("./connection");
 
-function selectAll(){
+const questionMarks = (vals) => vals.map(() => "?").toString();
 
-}
-
-function insertOne(){
-
-}
-
-function updateOne(){
-
-}
-
-module.exports = orm;
