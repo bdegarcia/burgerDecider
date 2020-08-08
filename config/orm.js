@@ -17,9 +17,9 @@ const orm = {
             cb(data);
         });
     },
-    updateOne: function(table, condition, cb) {
-        let query = `UPDATE ${table} SET devoured = 1 WHERE ${condition}`;
-        connection.query(query, [table], (err, data) => {
+    updateOne: function(table, idString, cb) {
+        let query = `UPDATE ${table} SET devoured = 1 WHERE ${idString}`;
+        connection.query(query, (err, data) => {
             if (err) throw err;
             cb(data);
         });

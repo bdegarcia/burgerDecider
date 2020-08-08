@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="container-fluid">
+        <h1 class="text-center">BURGURS</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Burgers I Want to Eat:</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li>
+                        {{burger_name}}
+                        <button class="btn eat-btn btn-default btn-sm" id="{{id}}">Eat Me!</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Burgers I Have Eaten:</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        {{burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Add a Burger to Eat</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="control-label" for="burger-name">Burger Name:</label>
+                        <input class="form-control" type="text" id="burger-name" name="burger_name">
+                    </div>
+                    <button id="add-btn" class="btn btn-default" type="submit">Add Burger</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
