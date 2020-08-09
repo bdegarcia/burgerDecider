@@ -8,9 +8,7 @@ $(document).ready(function() {
     });
     $("#add-btn").on("click", function (event) {
         event.preventDefault();
-        let newBurger = {
-            burger_name: $("#burger-name").val().trim()
-        };
+        let newBurger = {burger_name: $("#burger-name").val().trim()};
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger

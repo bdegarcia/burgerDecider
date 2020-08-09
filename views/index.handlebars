@@ -1,27 +1,28 @@
-<div class="container">
-    <div class="container-fluid">
-        <h1 class="text-center">BURGURS</h1>
-    </div>
+<div class="container-fluid header">
+    <img src="./assets/burger.jpg" alt="Cartoon Burger" class="img-fluid rounded mx-auto d-block burger-pic" />
+</div>
+<div>
+    <h1 class="text-center burger-header"><u>BEN'S BURGERS</u></h1>        
 </div>
 
 <div class="container">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row two-columns">
             <div class="col-md-6">
-                <h2>Burgers I Want to Eat:</h2>
+                <h2>Burgers I Will Eat</h2>
                 <ul>
                     {{#each burgers}}
                     {{#unless devoured}}
                     <li>
                         {{burger_name}}
-                        <button class="btn eat-btn btn-default btn-sm" id="{{id}}">Eat Me!</button>
+                        <button class="btn eat-btn btn-default btn-sm" id="{{id}}">Devour It!</button>
                     </li>
                     {{/unless}}
                     {{/each}}
                 </ul>
             </div>
             <div class="col-md-6">
-                <h2>Burgers I Have Eaten:</h2>
+                <h2>Burgers I Have Eaten</h2>
                 <ul>
                     {{#each burgers}}
                     {{#if devoured}}
@@ -35,14 +36,17 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center">Add a Burger to Eat</h2>
-                <form>
-                    <div class="form-group">
-                        <label class="control-label" for="burger-name">Burger Name:</label>
-                        <input class="form-control" type="text" id="burger-name" name="burger_name">
-                    </div>
-                    <button id="add-btn" class="btn btn-default" type="submit">Add Burger</button>
-                </form>
+                <h2 class="text-center">Add a Burger!</h2>
+                <div align="center">
+                    <form>
+                        <div class="form-group burger-input">
+                            <input class="form-control" type="text" id="burger-name" name="burger_name">
+                        </div>
+                        <div class="text-center">
+                            <button id="add-btn" class="text-center btn btn-default" type="submit">Add New Burger</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

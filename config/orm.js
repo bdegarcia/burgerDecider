@@ -4,8 +4,7 @@ const questionMarks = (values) => values.map(() => "?").toString();
 
 const orm = {
     selectAll: function(table, cb) {
-        let query = "SELECT * FROM ??";
-        connection.query(query, [table], (err, data) => {
+        connection.query(`SELECT * FROM ??`, [table], (err, data) => {
             if (err) throw err;
             cb(data);
         });
